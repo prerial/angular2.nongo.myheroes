@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,6 +7,6 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: [ '../css/app.component.css' ]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Tour of Heroes';
 }
