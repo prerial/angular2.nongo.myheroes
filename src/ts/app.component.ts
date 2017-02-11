@@ -1,15 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
-  template:`
-   <h1>{{title}}</h1>
-   <nav>
-     <a routerLink="/dashboard">Dashboard</a>
-     <a routerLink="/heroes">Heroes</a>
-   </nav>
-   <router-outlet></router-outlet>
-  `
+  templateUrl: '../html/app.component.html',
+  styleUrls: [ '../css/app.component.css' ]
 })
 
 export class AppComponent implements OnInit {
