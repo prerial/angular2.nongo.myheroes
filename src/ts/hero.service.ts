@@ -10,7 +10,6 @@ export class HeroService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private heroesUrl = 'api/heroes';  // URL to web api
-//  private heroesUrl = 'http://localhost:3333/products';  // URL to web api
 
   constructor(private http: Http) { }
 
@@ -22,7 +21,7 @@ export class HeroService {
   }
 
   getHero(id: number): Promise<Hero> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = Number.isNaN(Number(`${id}`))? `${this.heroesUrl}/`:`${this.heroesUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Hero)
@@ -54,6 +53,6 @@ export class HeroService {
 
   private handleError(error: any): Promise<any> {
 //    console.error('An error occurred', error); // for demo purposes only
-//    return Promise.reject(error.message || error);
+    return Promise.reject(error.message || error);
   }
 }
